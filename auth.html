@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Gym Borcelle - Work the Core</title>
+  </head>
+  <body>
+    <nav>
+      <div class="nav__logo">
+        <a href="#"><img src="assets/logo.png" alt="logo" /></a>
+      </div>
+      <ul class="nav__links">
+        <li class="link"><a href="/index.html">Home</a></li>
+        <li class="link"><a href="#">Program</a></li>
+        <li class="link"><a href="#">Service</a></li>
+        <li class="link"><a href="#">About</a></li>
+        <li class="link"><a href="#">Community</a></li>
+      </ul>
+      <!-- <a href="join-now.html">
+        <button class="btn">Join Now</button>
+      </a> -->
+    </nav>
+
+    <header class="section__container header__container">
+      <div class="card" style="display:block;" id="signin-card">
+        <h3>Sign In</h3>
+        <div class="role-selection-signin" style="margin:1rem auto; width: 100%; justify-content: space-between;">
+          <label>
+              <input type="radio" id="role_user" name="role" value="user">
+              User
+          </label>
+          <label>
+              <input type="radio" id="role_member" name="role" value="member">
+              Member
+          </label>
+          <label>
+              <input type="radio" id="role_admin" name="role" value="admin">
+              Admin
+          </label>
+      </div>
+        <form id="signin-form">
+            <input type="email" placeholder="Email" id="signin_email" required>
+            <input type="password" placeholder="Password" id="signin_password" required>
+            <button type="submit">Sign In</button>
+        </form>
+        <div class="toggle-link"><a href="#" onclick="toggleForm('forgotPwd')">Forgot Password?</a></div>
+        <div class="toggle-link">
+            <p>Don't have an account? <a href="#" onclick="toggleForm('signup')">Sign Up</a></p>
+        </div>
+    </div>
+    
+    <div class="card" style="display:none;" id="signup-card">
+        <h3>Sign Up</h3>
+        <form id="signup-form">
+          <div class="role-selection-signup" style="margin:1rem auto; width: 100%; justify-content: space-between;">
+            <label>
+                <input type="radio" id="role_user" name="role" value="user">
+                User
+            </label>
+            <label>
+                <input type="radio" id="role_member" name="role" value="member">
+                Member
+            </label>
+            <label>
+                <input type="radio" id="role_admin" name="role" value="admin">
+                Admin
+            </label>
+        </div>
+            <input type="text" placeholder="Fullname" id="fullname">
+            <input type="text" placeholder="Username" id="username" required>
+            <input type="email" placeholder="Email" id="email" required>
+            <input type="password" placeholder="Password" id="password" required>
+            
+              <button type="submit" onclick="toggleForm('signin')">Sign Up</button>
+            
+        </form>
+        <div class="toggle-link">
+            <p>Already have an account? <a href="#" onclick="toggleForm('signin')">Sign In</a></p>
+        </div>
+    </div>
+
+    <div class="card" style="display:none;" id="forgotPwd-card">
+      <h3>Forget Password</h3>
+      <form id="forgotPwd-form">
+          <input type="email" placeholder="Email" id="forgotEmail" required>
+          
+          <button type="submit" onclick="toggleForm('signin')">Send Reset Link</button>
+          
+      </form>
+      
+  </div>
+
+    <div class="header__image">
+      <img src="assets/header.png" alt="header" />
+    </div>
+    
+    <script>
+        function toggleForm(formType) {
+            const signinCard = document.querySelector('#signin-card');
+            const signupCard = document.querySelector('#signup-card');
+            const forgotPwdCard = document.querySelector('#forgotPwd-card');
+    
+            if (formType === 'signup') {
+                signinCard.style.display = 'none';
+                signupCard.style.display = 'block';
+                forgotPwdCard.style.display = 'none';
+            } else if(formType === 'signin') {
+                signinCard.style.display = 'block';
+                signupCard.style.display = 'none';
+                forgotPwdCard.style.display = 'none';
+            } else {
+                signinCard.style.display = 'none';
+                signupCard.style.display = 'none';
+                forgotPwdCard.style.display = 'block';
+            }
+        }
+    </script>
+    </header>
+
+    <footer class="section__container footer__container">
+      <span class="bg__blur"></span>
+      <span class="bg__blur footer__blur"></span>
+      <div class="footer__col">
+        <div class="footer__logo"><img src="assets/logo.png" alt="logo" /></div>
+        <p>
+          Take the first step towards a healthier, stronger you with our
+          unbeatable pricing plans. Let's sweat, achieve, and conquer together!
+        </p>
+        <div class="footer__socials">
+          <a href="#"><i class="ri-facebook-fill"></i></a>
+          <a href="#"><i class="ri-instagram-line"></i></a>
+          <a href="#"><i class="ri-twitter-fill"></i></a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4>Company</h4>
+        <a href="#">Business</a>
+        <a href="#">Franchise</a>
+        <a href="#">Partnership</a>
+        <a href="#">Network</a>
+      </div>
+      <div class="footer__col">
+        <h4>About Us</h4>
+        <a href="#">Blogs</a>
+        <a href="#">Security</a>
+        <a href="#">Careers</a>
+      </div>
+      <div class="footer__col">
+        <h4>Contact</h4>
+        <a href="#">Contact Us</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms & Conditions</a>
+        <a href="#">BMI Calculator</a>
+      </div>
+    </footer>
+    <div class="footer__bar">
+      Copyright © 2023 Web Design Mastery. All rights reserved.
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bcryptjs/2.2.0/bcrypt.min.js" integrity="sha512-BJZhA/ftU3DVJvbBMWZwp7hXc49RJHq0xH81tTgLlG16/OkDq7VbNX6nUnx+QY4bBZkXtJoG0b0qihuia64X0w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script type="module" src="scripts/auth.js"></script>
+    
+  </body>
+
+
+</html>

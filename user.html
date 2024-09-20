@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Login</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <nav style="justify-content: space-between; max-width: 100vw;">
+        <div style="display: flex; gap: 2rem;">
+          <div class="nav__logo">
+            <a href="#"><img src="assets/logo.png" alt="logo" /></a>
+          </div>
+          <ul class="nav__links">
+            
+            <li class="link"><a href="#" onClick="toggleSec('notifications')">Notifications</a></li>
+            <li class="link"><a href="#">Records</a></li>
+            <li class="link"><a href="#">Reciepts</a></li>
+            <li class="link"><a href="#">Community</a></li>
+          </ul>
+        </div>
+        <a href="index.html">
+          <button id="logoutBtn" class="btn">Logout</button>
+        </a>
+    </nav>
+
+    <header class="section__container header__container welcome__container">
+      <div class="header__content">
+        <span class="bg__blur"></span>
+        <span class="bg__blur header__blur"></span>
+        <h1><span>WELCOME</span></h1>
+        <h2 id="welcome"></h2>
+    </header>
+
+    <section id="notifications" style="display: none;width: 70vw; margin: auto; text-align: center;">
+      <div class="explore__card" style="margin-top:20px">
+        <span><i class="ri-notification-3-fill"></i></span>
+        <h4>Payment Reminder</h4>
+        <p>
+          Your membership fee of $50 is due on September 15th. Please make the payment to avoid service interruption.
+        </p>
+        <a href="#">Read More <i class="ri-arrow-right-line"></i></a>
+      </div>
+      <div class="explore__card" style="margin-top:20px">
+        <span><i class="ri-notification-3-fill"></i></span>
+        <h4>Receipt Confirmation</h4>
+        <p>
+          Your recent payment has been successfully processed. Receipt No: #123456
+        </p>
+        <a href="#">Read More <i class="ri-arrow-right-line"></i></a>
+      </div>
+      <div class="explore__card" style="margin-top:20px">
+        <span><i class="ri-notification-3-fill"></i></span>
+        <h4>Membership Status</h4>
+        <p>
+          Congratulations! You have successfully renewed your gym membership until December 31st
+        </p>
+        <a href="#">Read More <i class="ri-arrow-right-line"></i></a>
+      </div>
+    </div>
+      <div class="explore__card" style="margin-top:20px">
+        <span><i class="ri-notification-3-fill"></i></span>
+        <h4>Workout and Diet Plan Updates</h4>
+        <p>
+          New workout plan assigned by your trainer: ‘Strength Building - Level 2’. Check your profile for details.
+        </p>
+        <a href="#">Read More <i class="ri-arrow-right-line"></i></a>
+      </div>
+      <div class="explore__card" style="margin-top:20px">
+        <span><i class="ri-notification-3-fill"></i></span>
+        <h4>Class or Session Reminders</h4>
+        <p>
+          Reminder: Personal training session with Coach John tomorrow at 8 AM.
+        </p>
+        <a href="#">Read More <i class="ri-arrow-right-line"></i></a>
+      </div>
+      <div class="explore__card" style="margin-top:20px">
+        <span><i class="ri-notification-3-fill"></i></span>
+        <h4>Gym Announcements</h4>
+        <p>
+          The gym will be closed on September 25th due to maintenance. We apologize for the inconvenience.
+          New equipment alert! Check out the latest addition to our cardio section.
+        </p>
+        <a href="#">Read More <i class="ri-arrow-right-line"></i></a>
+      </div>
+    </div>
+      <div class="explore__card" style="margin-top:20px">
+        <span><i class="ri-notification-3-fill"></i></span>
+        <h4>Special Offers and Promotions</h4>
+        <p>
+          Get a free protein shake with every workout session this week. Don’t miss out!
+        </p>
+        <a href="#">Read More <i class="ri-arrow-right-line"></i></a>
+      </div>
+      <div class="explore__card" style="margin-top:20px">
+        <span><i class="ri-notification-3-fill"></i></span>
+        <h4>Event Notifications</h4>
+        <p>
+          Join us for a special bootcamp session this Saturday at 9 AM. Register at the front desk.
+        </p>
+        <a href="#">Read More <i class="ri-arrow-right-line"></i></a>
+      </div>
+      <div class="explore__card" style="margin-top:20px">
+        <span><i class="ri-notification-3-fill"></i></span>
+        <h4>Profile or Account Alerts</h4>
+        <p>
+          For your security, we have reset your password. Please check your email for the new password link
+        </p>
+        <a href="#">Read More <i class="ri-arrow-right-line"></i></a>
+      </div>
+    </div>
+    </section>
+
+    <section id="records">
+      
+    </section>
+
+    <section id="reciepts">
+
+    </section>
+
+    <section id="community">
+
+    </section>
+
+
+    <script>
+      function toggleSec(sectionType) {
+          const welcomeContainer = document.querySelector('.welcome__container');
+          const notifications = document.querySelector('#notifications');
+          const records = document.querySelector('#records');
+          const reciepts = document.querySelector('#reciepts');
+          const community = document.querySelector('#community');
+  
+          if (sectionType === 'notifications') {
+              welcomeContainer.style.display = 'none';
+              notifications.style.display = 'block';
+              records.style.display = 'none';
+              reciepts.style.display = 'none';
+              community.style.display = 'none';
+          } else if(sectionType === 'records') {
+            welcomeContainer.style.display = 'none';
+            notifications.style.display = 'none';
+            records.style.display = 'block';
+            reciepts.style.display = 'none';
+            community.style.display = 'none';
+          } else if(sectionType === 'reciepts') {
+            welcomeContainer.style.display = 'none';
+            notifications.style.display = 'none';
+            records.style.display = 'none';
+            reciepts.style.display = 'block';
+            community.style.display = 'none';
+          } else if(sectionType === 'community') {
+            welcomeContainer.style.display = 'none';
+            notifications.style.display = 'none';
+            records.style.display = 'none';
+            reciepts.style.display = 'none';
+            community.style.display = 'block';
+          } else {
+            welcomeContainer.style.display = 'block';
+            notifications.style.display = 'none';
+            records.style.display = 'none';
+            reciepts.style.display = 'none';
+            community.style.display = 'none';
+          }
+      }
+  </script>
+    <script type="module" src="scripts/user.js"></script>
+</body>
+</html>
